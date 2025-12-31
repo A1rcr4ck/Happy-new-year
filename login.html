@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Just for You 🌙</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fde2e4, #f9e5ff, #fff1d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.85);
+      max-width: 420px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #4b2c3a;
+      margin-bottom: 15px;
+    }
+
+    .riddle {
+      font-size: 14px;
+      color: #5f4b5a;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #f7a8b8, #d89cf6);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .error {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #c94a4a;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>A Little Test 🤍</h1>
+
+    <div class="riddle">
+      I’m not a stranger,<br>
+      I’m the name you whispered<br>
+      when love felt the safest.<br><br>
+    
+      And the key?<br>
+      A date when a simple “yes”<br>
+      changed everything forever.
+    </div>
+
+    <input type="text" id="username" placeholder="Who am I to you?" />
+    <input type="password" id="password" placeholder="When did forever begin?" />
+
+    <button onclick="checkLogin()">Enter</button>
+
+    <div class="error" id="errorMsg">
+      That doesn’t feel right… think with your heart 🤍
+    </div>
+  </div>
+
+  <script>
+    const USERNAME = "chakkarapenn";
+    const PASSWORD = "25/03/2022";
+
+    function checkLogin() {
+      const u = document.getElementById("username").value.trim();
+      const p = document.getElementById("password").value.trim();
+
+      if (u === USERNAME && p === PASSWORD) {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("errorMsg").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+  filter: blur(4px) brightness(1.0);
+  z-index: -1;
+}
+
+
+.bg.show {
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(6px);
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #5f4b5a;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(135deg, #f7a8b8, #d89cf6);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="bg" id="bg"></div>
+<div class="overlay"></div>
+
+<div class="container">
+  <div class="card">
+    <p>
+    Chakkarapenne… every time I look into your eyes, I’m reminded why I fell in love 👀❤️ not because you were perfect, but because you made me want to become better. You never let me feel taken for granted. You held me, corrected me, pushed me, and loved me in ways that made my life feel complete 🤍. Even after four years, I still remember the first time I held your hand 🤝, how nervous I was, and how something inside me whispered that this is the girl I’ll build my world with 🏡✨. Your boldness, your strength, your kindness, and the way you do everything with your whole heart became my motivation 💫, my peace 🕊️, my home 🏠. As we step into this new year together 🎆 and talk about our future, two little kids 👶👶, a beautiful home 🏡, and a life where we never have to stay apart for work, it doesn’t feel like a dream. It feels like the truth my soul has already chosen 💖. With you, chakkaree, love isn’t a moment. It’s every day 📅, every plan ✨, and every version of the man you helped me become 💙. Happy New Year, my love 🎉❤️
+    <button onclick="location.href='more.html'">Hug me🫂</button>
+  </div>
+</div>
+
+<script>
+const images = [
+  "photos/1.jpg","photos/2.jpg","photos/3.jpg","photos/4.jpg","photos/5.jpg",
+  "photos/6.jpg","photos/7.jpg","photos/8.jpg","photos/9.jpg","photos/10.jpg"
+];
+
+const bg = document.getElementById("bg");
+
+function changeBackground() {
+  const random = images[Math.floor(Math.random() * images.length)];
+  bg.classList.remove("show");
+
+  setTimeout(() => {
+    bg.style.backgroundImage = `url('${random}')`;
+    bg.classList.add("show");
+  }, 500);
+}
+
+changeBackground();
+setInterval(changeBackground, 5000);
+</script>
+
+</body>
+</html>

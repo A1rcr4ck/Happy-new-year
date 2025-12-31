@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Words 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fde2e4, #f9e5ff, #fff1d6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #4b2c3a;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 14px;
+  color: #5f4b5a;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(135deg, #f7a8b8, #d89cf6);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Your Turn 🤍</h1>
+  <p>
+    If there’s anything in your heart —  
+    something you never said, or something you want me to know —  
+    write it here.
+  </p>
+
+  <textarea id="message" placeholder="Type whatever you feel..."></textarea>
+
+  <button onclick="sendMail()">Send to Me</button>
+</div>
+
+<script>
+function sendMail() {
+  const text = document.getElementById("message").value.trim();
+
+  if (!text) {
+    alert("Write something from your heart 🤍");
+    return;
+  }
+
+  const subject = encodeURIComponent("Something from your heart 🤍");
+  const body = encodeURIComponent(text);
+
+  window.location.href =
+    `mailto:sarangnai36@gmail.com?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
